@@ -1,4 +1,4 @@
-name:ִ 𖤐 deploy & qualidade assurance
+name: 🚀 Deploy & Quality Assurance
 
 on:
   push:
@@ -7,31 +7,38 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: ${{github.workflow_dispatch }}-${{github.ref}}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 jobs:
   deploy:
-  name:𖤐 deploy & qualidade assurance
-  runs-on: ubuntu-latest
-  if: github.ref == 'refs/heads/main'
-  outputs:
-   page_url: ${{steps.deployment.outputs.page.url}}
+    name: 🚀 Deploy to Github pages
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
 
-environment:
- name:github.pages
- url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-steps:
- - name:📩 checkout code
- uses: actions/checkout@v4
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
 
- - name 📄 setup pages
-  uses: actions/configure-pages@v4
- - name 📦 upload artifact
-  uses: actions/upload-pages-artifact@v3
+      - name: 📄 Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: 📦 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
