@@ -12,7 +12,7 @@ a {
 
 
 #titulo {
-   background-image: url("/ChileCapa.jpg");
+   background-image: url("../ChileCapa.jpg");
    height: 120px;
 }
 
