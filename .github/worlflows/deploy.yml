@@ -1,0 +1,37 @@
+name:ִ 𖤐 deploy & qualidade assurance
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{github.workflow_dispatch }}-${{github.ref}}
+  cancel-in-progress: true
+    
+jobs:
+  deploy:
+  name:𖤐 deploy & qualidade assurance
+  runs-on: ubuntu-latest
+  if: github.ref == 'refs/heads/main'
+  outputs:
+   page_url: ${{steps.deployment.outputs.page.url}}
+
+environment:
+ name:github.pages
+ url: ${{ steps.deployment.outputs.page_url }}
+
+steps:
+ - name:📩 checkout code
+ uses: actions/checkout@v4
+
+ - name 📄 setup pages
+  uses: actions/configure-pages@v4
+ - name 📦 upload artifact
+  uses: actions/upload-pages-artifact@v3

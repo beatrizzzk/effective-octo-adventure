@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ditadura.css">
+</head>
+<body>
+    <div>
+        <form action="">
+            <fieldset>
+                <legend>Fale conosco</legend>
+                <label for="nome">Nome</label>
+                <input id="nome" nome="nome" type="text">
+                <label for="email"> E-mail</label>
+                <input id="email" nome="email" type="email">
+                <label for="assunto">Assunto</label>
+            <select nome="assunto" id="assunto">
+                <option value="feedback">retorno sobre o projeto</option>
+                <option value="Sugest">Sugestao para projeto</option>
+                <option value="new-project">Novo projeto</option>
+                <option value="mensagem">Uma mensagem</option>
+                </select>
+                <label for="mensagem">mensagem</label>
+                <textarea nome="mensagem" id="mensagem" cols="82" rows="20"></textarea>
+
+            </fieldset>
+            <button type="submit">enviar</button>
+        </form>
+
+    </div>
+    <script>
+        function validaForm(){
+            const emailText = document.getElementById('email');
+            let email.value.trim();
+            if (emailText. includes("@"))
+            console.log("achei @!")
+        valido =  true }
+        
+        else{
+            valido = false;
+        }
+
+        let partesEmail = emailText.split('@');
+        if (partesEmail [0].lenght >= 7 && par)
+    
+
+    </script>
+    
+</body>
+</html>

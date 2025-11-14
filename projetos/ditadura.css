@@ -1,0 +1,74 @@
+* {
+   margin: 0%;
+   padding: 0%;
+   box-sizing: border-box;
+}
+
+
+a {
+   color: aliceblue;
+   text-decoration: none;
+}
+
+
+#titulo {
+   background-image: url("/ChileCapa.jpg");
+   height: 120px;
+}
+
+body {
+   background-color: dimgrey;
+}
+
+#emi {
+   width: 30%;
+}
+
+#caixa {
+   width: 30%;
+}
+
+#up {
+   background-color: dimgrey;
+   text-align: center;
+   align-items: center;
+   padding: 10px;
+   border-radius: 20px;
+   box-shadow: 10px 10px 10px black;
+}
+
+div {
+   padding: 10px;
+   margin: 10px;
+}
+
+
+#navbar {
+   float: left;
+   display: flex;
+   gap: 0 5px;
+   background-color: black;
+   color: #fafafa;
+   justify-content: space-between;
+   padding: 14px 116px;
+   text-decoration: none;
+   width: 100%;
+   list-style: none;
+}
+
+
+#navbar li {
+   padding: 8px 16px;
+}
+
+#navbar li:hover {
+
+   background-color: dimgrey;
+   text-align: center;
+}
+
+.navbar {
+   overflow: hidden;
+   background-color: saddlebrown;
+   text-align: center;
+}
